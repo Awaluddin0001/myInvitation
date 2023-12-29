@@ -1,0 +1,82 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 22rem;
+  padding: 1.5em;
+  transition: all 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #ffce92);
+  transform: scale(1.1);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.ourLove {
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.fs2p4r {
+  font-size: 2.4rem;
+  margin: 1.2rem auto;
+  width: 85%;
+  text-align: center;
+}
+.fs3p6r {
+  font-size: 3.6rem;
+}
+
+.myIntro {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0%);
+  width: 90%;
+}
+
+@media only screen and (max-width: 431px) {
+  .logo {
+    height: 16rem;
+  }
+
+  .fs2p4r {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .fs2p4r {
+    font-size: 1.6rem;
+  }
+
+  .ourLove {
+    height: 10rem;
+  }
+}
