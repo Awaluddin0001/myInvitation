@@ -8,7 +8,7 @@ export default function EncryptName() {
   const [urlLink, setUrlLink] = useState("");
   const makeUndangan = () => {
     const buat = encryptString(namaUndangan);
-    const Link = "http://localhost:5173/weddinginvitation/";
+    const Link = "https://alabopa.com/weddinginvitation/";
     const fullLink = `${Link}${buat}`;
     setUrlLink(fullLink);
     setLinkCreate(true);

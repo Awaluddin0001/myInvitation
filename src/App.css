@@ -215,6 +215,7 @@
   right: 50%;
   transform: translate(53.7%, 12.5%);
   z-index: 1;
+  filter: drop-shadow(5px 7px 10px #00000068);
   animation: frameshake 1s linear infinite alternate;
 }
 
@@ -299,9 +300,5 @@
   .ourLove {
     height: 10rem;
     transform: translate(50%, 20%);
-  }
-  .img1,
-  .img2 {
-    width: 40%;
   }
 }

@@ -3,7 +3,7 @@ import moment from "moment-timezone";
 import "./Countdown.css";
 export default function Countdown2() {
   const currentDate = moment().utcOffset("+08:00"); // Set the current date with UTC offset +08:00
-  const targetDate = moment("2024-01-14T10:00:00").utcOffset("+08:00"); // Set the target date with UTC offset +08:00
+  const targetDate = moment("2024-01-21T10:00:00").utcOffset("+08:00"); // Set the target date with UTC offset +08:00
 
   const [duration, setDuration] = useState(
     moment.duration(targetDate.diff(currentDate))

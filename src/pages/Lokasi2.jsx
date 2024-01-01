@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import pin from "./../assets/tempat.svg";
 export default function Lokasi2() {
@@ -29,7 +30,12 @@ export default function Lokasi2() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[-5.2369368, 119.4246789]}>
+        <Marker
+          position={[-5.2369368, 119.4246789]}
+          icon={
+            new Icon({ iconUrl: pin, iconSize: [25, 41], iconAnchor: [12, 41] })
+          }
+        >
           <Popup>Acara Pesta Mempelai Wanita</Popup>
         </Marker>
       </MapContainer>
