@@ -1,0 +1,8 @@
+.atas {
+  transform: translate(0%, -100%);
+  transition: all 1s linear;
+}
+
+.atas.show {
+  transform: translate(0%, 0%);
+}

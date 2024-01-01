@@ -1,0 +1,97 @@
+.daat1 {
+  transform-origin: bottom left;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daatun1 2s linear infinite alternate;
+}
+
+@keyframes daatun1 {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+}
+
+.daat2 {
+  transform-origin: bottom right;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daatun2 2s linear infinite alternate;
+}
+
+@keyframes daatun2 {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+}
+.daat3 {
+  transform-origin: bottom right;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daatun3 2s linear infinite alternate;
+}
+
+@keyframes daatun3 {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+}
+.daat4 {
+  transform-origin: top right;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daatun4 2s linear infinite alternate;
+}
+
+@keyframes daatun4 {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+}
+.daat5 {
+  transform-origin: top left;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daatun5 2s linear infinite alternate;
+}
+
+@keyframes daatun5 {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+}
+.daat6 {
+  transform-origin: top left;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daatun6 2s linear infinite alternate;
+}
+
+@keyframes daatun6 {
+  0% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(-3deg);
+  }
+}

@@ -1,0 +1,33 @@
+.kelBungaKir1 {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: rotatebungakiri1 2s linear infinite alternate;
+}
+
+@keyframes rotatebungakiri1 {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.kelBungaKan1 {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: rotatebungakan1 2s linear infinite alternate;
+}
+
+@keyframes rotatebungakan1 {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}

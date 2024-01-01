@@ -1,0 +1,50 @@
+.gDaunBuAt2 {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daunAtas2 2s linear infinite alternate;
+}
+
+@keyframes daunAtas2 {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.gdaunBuBa2 {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daunBawah2 2s linear infinite alternate;
+}
+
+@keyframes daunBawah2 {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+.gdaunKir2 {
+  transform-origin: bottom right;
+  transform-box: fill-box;
+  transform: rotate(0deg);
+  animation: daunKir2 2s linear infinite alternate;
+}
+
+@keyframes daunKir2 {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}

@@ -2,8 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  background-image: url("./assets/bgWeddingAlabopa1.png");
+  box-sizing: border-box;
+  background-image: url("./assets/bgWeddingAlabopa2.png");
+  background-size: cover;
   font-size: 62.5%;
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -1,14 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Carattere&display=swap");
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
   height: 22rem;
-  padding: 1.5em;
+  padding: 1.2rem 0;
   transition: all 300ms;
+  width: 100%;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #ffce92);
@@ -40,8 +43,9 @@
 
 .ourLove {
   position: absolute;
-  transform: translateX(-50%);
+  transform: translate(50%, 0);
   bottom: 0;
+  right: 50%;
 }
 
 .fs2p4r {
@@ -57,8 +61,169 @@
 .myIntro {
   position: absolute;
   top: 0;
-  transform: translate(-50%, 0%);
+  right: 50%;
+  transform: translate(50%, 0%);
   width: 90%;
+}
+
+.midlePosition {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 121px;
+}
+
+.midlePosition p {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.nameMarried {
+  font-family: "Carattere", cursive;
+  color: #ff0000;
+  font-size: 3rem;
+  -webkit-text-stroke: 0.015rem rgb(155, 62, 0); /* Width and color of the stroke */
+}
+
+.scheduleStyle {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.scheduleDetail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 50%;
+  gap: 0.5rem;
+}
+
+.scheduleDetail2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 60%;
+  gap: 0.5rem;
+}
+
+.scheduleDetail h3 {
+  font-size: 1.4rem;
+  margin: 0;
+  text-align: left;
+}
+.scheduleDetail2 h3 {
+  font-size: 1.4rem;
+  margin: 0;
+  text-align: left;
+}
+
+.namaTurut {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.cardBank {
+  padding: 1.2rem;
+  border-radius: 10px;
+  background-image: url("./assets/bgWeddingAlabopa2.png");
+  -webkit-box-shadow: 0px 0px 15px 5px #00000060;
+  box-shadow: 0px 0px 15px 5px #00000060;
+}
+
+.cardBankHead {
+  display: flex;
+  gap: 2rem;
+}
+
+.blackLogo {
+  filter: brightness(0);
+}
+
+.cardBankBody {
+  position: relative;
+  height: 16rem;
+}
+
+.bankfade {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  z-index: 100;
+  width: 100%;
+}
+
+.bankfade.off {
+  opacity: 0;
+  z-index: 1;
+}
+
+.copyText {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #000;
+  padding: 0.2rem 0.4rem;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.copyText img {
+  width: 15%;
+}
+
+.notificationC {
+  position: fixed;
+  bottom: 15%;
+  left: 20%;
+  background-color: #4caf50;
+  color: #000;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 102;
+  font-weight: 900;
+}
+
+.notificationC.show {
+  display: block;
+  opacity: 1;
+}
+
+.flowerBottom3 {
+  width: 110%;
+  height: 140%;
+  transform-origin: bottom;
+  transform-box: fill-box;
+  position: absolute;
+  bottom: 0%;
+  right: 50%;
+  transform: translate(53.7%, 12.5%);
+  z-index: 1;
+  animation: frameshake 1s linear infinite alternate;
+}
+
+@keyframes frameshake {
+  0% {
+    transform: translate(53.7%, 12.3%);
+  }
+  100% {
+    transform: translate(53.7%, 12.8%);
+  }
 }
 
 @media only screen and (max-width: 431px) {
@@ -69,6 +234,10 @@
   .fs2p4r {
     font-size: 2rem;
   }
+
+  .ourLove {
+    transform: translate(50%, 13%);
+  }
 }
 
 @media only screen and (max-width: 376px) {
@@ -78,5 +247,6 @@
 
   .ourLove {
     height: 10rem;
+    transform: translate(50%, 20%);
   }
 }
