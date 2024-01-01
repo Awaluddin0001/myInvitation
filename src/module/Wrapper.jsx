@@ -19,14 +19,28 @@ import Gift from "./svg/Gift";
 import Tempat from "./svg/Tempat";
 import "./Wrapper.css";
 
-export default function Wrapper({ children, name, transText1 }) {
+export default function Wrapper({
+  children,
+  name,
+  transText1,
+  sSudut,
+  setsSudut,
+  onB,
+  setOnb,
+  onW,
+  setOnw,
+  onT,
+  setOnt,
+  onG,
+  setOng,
+  onK,
+  setOnk,
+  setOnperempuan,
+  setOnpria,
+  setOnO,
+}) {
   const [onFrames, setonFrames] = useState(false);
-  const [sSudut, setsSudut] = useState(false);
-  const [onB, setOnb] = useState(false);
-  const [onW, setOnw] = useState(false);
-  const [onT, setOnt] = useState(false);
-  const [onG, setOng] = useState(false);
-  const [onK, setOnk] = useState(false);
+  const [onNav, setonNav] = useState(false);
 
   const [butSummon, setbutSummon] = useState(false);
   const [onFlower1, setonFlower1] = useState(false);
@@ -53,6 +67,9 @@ export default function Wrapper({ children, name, transText1 }) {
     setOnt(false);
     setOng(false);
     setOnk(false);
+    handleunSummonF1();
+    handleunSummonF2();
+    handleunSummonbut();
   };
 
   const handleSummonbut = () => {
@@ -66,6 +83,10 @@ export default function Wrapper({ children, name, transText1 }) {
     setOnt(false);
     setOng(false);
     setOnk(false);
+    setOnO(false);
+    handleSummonF1();
+    handleunSummonF2();
+    handleSummonbut();
   };
   const handleOnW = () => {
     setsSudut(true);
@@ -74,6 +95,10 @@ export default function Wrapper({ children, name, transText1 }) {
     setOnt(false);
     setOng(false);
     setOnk(false);
+    setOnO(false);
+    handleunSummonF1();
+    handleSummonF2();
+    handleunSummonbut();
   };
   const handleOnT = () => {
     setsSudut(true);
@@ -82,6 +107,10 @@ export default function Wrapper({ children, name, transText1 }) {
     setOnt(true);
     setOng(false);
     setOnk(false);
+    setOnO(false);
+    handleSummonF1();
+    handleunSummonF2();
+    handleunSummonbut();
   };
   const handleOnG = () => {
     setsSudut(false);
@@ -90,6 +119,10 @@ export default function Wrapper({ children, name, transText1 }) {
     setOnt(false);
     setOng(true);
     setOnk(false);
+    setOnO(false);
+    handleunSummonF1();
+    handleSummonF2();
+    handleSummonbut();
   };
   const handleOnK = () => {
     setsSudut(false);
@@ -98,11 +131,28 @@ export default function Wrapper({ children, name, transText1 }) {
     setOnt(false);
     setOng(false);
     setOnk(true);
+    setOnO(false);
+    handleSummonF1();
+    handleunSummonF2();
+    handleunSummonbut();
   };
 
   const handleSummonF1 = () => {
     setonFlower1(true);
   };
+
+  const handlePria = () => {
+    setOnpria(true);
+    setOnperempuan(false);
+    setOnO(false);
+  };
+
+  const handlePerempuan = () => {
+    setOnpria(false);
+    setOnperempuan(true);
+    setOnO(false);
+  };
+
   const handleSummonF2 = () => {
     setonFlower2(true);
   };
@@ -121,6 +171,21 @@ export default function Wrapper({ children, name, transText1 }) {
     audioRef.current.volume = 0.3;
     setAudioEnabled(false);
   };
+
+  function capitalizeEveryWord(inputString) {
+    // Split the string into an array of words
+    const words = inputString.split(" ");
+
+    // Capitalize the first letter of each word
+    const capitalizedWords = words.map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+
+    // Join the capitalized words back into a string
+    const resultString = capitalizedWords.join(" ");
+
+    return resultString;
+  }
 
   return (
     <div className="bgWrapper">
@@ -176,15 +241,21 @@ export default function Wrapper({ children, name, transText1 }) {
           alt="alabopa butterfly"
           className={butSummon ? "butterGif2 summon" : "butterGif2"}
         />
-        <div className={sSudut ? "navbarWoman show" : "navbarWoman"}>
+        <div
+          className={sSudut ? "navbarWoman show" : "navbarWoman"}
+          onClick={handlePerempuan}
+        >
           <Woman className="icSudut" />
           <h3 className="fontUp">Wanita</h3>
         </div>
-        <div className={sSudut ? "navbarMan show" : "navbarMan"}>
+        <div
+          className={sSudut ? "navbarMan show" : "navbarMan"}
+          onClick={handlePria}
+        >
           <h3 className="fontUp">Pria</h3>
           <Man className="icSudut" />
         </div>
-        <div className="navBar">
+        <div className={onNav ? "navBar show" : "navBar"}>
           <div className="navBar-iconic" onClick={handleOnB}>
             <Beranda className="icSize" act={onB} />
             <h3 style={{ color: `${onB ? "#f27880" : "#000"}` }}>Home</h3>
@@ -203,7 +274,7 @@ export default function Wrapper({ children, name, transText1 }) {
           </div>
           <div className="navBar-iconic" onClick={handleOnK}>
             <Komentar className="icSize" act={onK} />
-            <h3 style={{ color: `${onK ? "#f27880" : "#000"}` }}>Komentar</h3>
+            <h3 style={{ color: `${onK ? "#f27880" : "#000"}` }}>Pesan</h3>
           </div>
           <div className="navBar-iconic" onClick={handleTutup}>
             <img src={Tutup} alt="tutup undangan" className="icSize" />
@@ -213,7 +284,7 @@ export default function Wrapper({ children, name, transText1 }) {
         <div className="content">{children}</div>
       </div>
       <ModalIntro
-        name={name}
+        name={capitalizeEveryWord(name)}
         openUndangan={openUndangan}
         setOpenUndangan={setOpenUndangan}
         sound={handlePlayMusic}
@@ -222,13 +293,29 @@ export default function Wrapper({ children, name, transText1 }) {
         transText1={transText1}
         transFrames={setonFrames}
         setOnb={setOnb}
+        setonNav={setonNav}
       />
     </div>
   );
 }
 
 Wrapper.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.node,
   name: PropTypes.string,
-  transText1: PropTypes.bool,
+  transText1: PropTypes.func,
+  sSudut: PropTypes.bool,
+  setsSudut: PropTypes.func,
+  onB: PropTypes.bool,
+  setOnb: PropTypes.func,
+  onW: PropTypes.bool,
+  setOnw: PropTypes.func,
+  onT: PropTypes.bool,
+  setOnt: PropTypes.func,
+  onG: PropTypes.bool,
+  setOng: PropTypes.func,
+  onK: PropTypes.bool,
+  setOnk: PropTypes.func,
+  setOnperempuan: PropTypes.func,
+  setOnpria: PropTypes.func,
+  setOnO: PropTypes.func,
 };

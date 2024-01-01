@@ -13,6 +13,7 @@ export default function ModalIntro({
   openUndangan,
   setOpenUndangan,
   setOnb,
+  setonNav,
 }) {
   const openHandler = () => {
     sound();
@@ -22,6 +23,7 @@ export default function ModalIntro({
     transText1(true);
     transFrames(true);
     setOnb(true);
+    setonNav(true);
   };
 
   return (
@@ -49,12 +51,13 @@ export default function ModalIntro({
 
 ModalIntro.propTypes = {
   name: PropTypes.string,
-  sound: PropTypes.bool,
-  summonBut: PropTypes.bool,
-  handleSummonF1: PropTypes.bool,
-  transText1: PropTypes.bool,
-  transFrames: PropTypes.bool,
+  sound: PropTypes.func,
+  summonBut: PropTypes.func,
+  handleSummonF1: PropTypes.func,
+  transText1: PropTypes.func,
+  transFrames: PropTypes.func,
   openUndangan: PropTypes.bool,
-  setOpenUndangan: PropTypes.bool,
-  setOnb: PropTypes.bool,
+  setOpenUndangan: PropTypes.func,
+  setOnb: PropTypes.func,
+  setonNav: PropTypes.func,
 };

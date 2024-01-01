@@ -1,0 +1,29 @@
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.digit {
+  margin: 0 5px;
+  background-color: #8f4242;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.digit h4 {
+  margin: 0;
+}
+
+.digit h5 {
+  margin: 0;
+}

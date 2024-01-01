@@ -28,7 +28,7 @@ export default function Transfer() {
   return (
     <div className="midlePosition">
       <h1>Kirim Hadiah</h1>
-      <h2>
+      <h2 style={{ width: "80%" }}>
         Doa Restu Anda merupakan karunia yang sangat bearti bagi kami. Namun
         jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado
         secara cashless

@@ -1,0 +1,52 @@
+.encryptWrapper {
+  max-width: 430px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 auto;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.namaInput {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 2rem;
+}
+
+.namaInput input {
+  border-radius: 10px;
+  padding: 1rem 2rem;
+}
+
+.btnNamaUndangan {
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: #f76f6f;
+  padding: 0.8rem 1.4rem;
+}
+
+.mylink {
+  color: #f76f6f;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  width: 80%;
+  margin-top: 20px;
+  opacity: 0;
+  visibility: hidden;
+}
+.mylink.show {
+  opacity: 1;
+  visibility: visible;
+}

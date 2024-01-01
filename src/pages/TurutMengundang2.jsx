@@ -19,7 +19,7 @@ export default function TurutMengundang2() {
       </h3>
       <p>Turut Mengundang</p>
       <div className="namaTurut">
-        <h3 style={{ fontWeight: 900, textAlign: "left" }}>
+        <h3 className="tMengundangPria">
           *Aqsa Ilyas Dg. Sibali <br />
           *Hj. Dahlia Dg. Ratu <br />
           *Iskandar Dg. Romo <br />
@@ -28,7 +28,7 @@ export default function TurutMengundang2() {
           *Muh. Iqbal Ilyas, S.e Dg. Magassing <br />
           *Nurfalah Mizeldi Hasan
         </h3>
-        <h3 style={{ fontWeight: 900, textAlign: "left" }}>
+        <h3 className="tMengundangPria">
           *Molle Dg. Rangka
           <br />
           *AKP. Mustafani Dg. Ngewa

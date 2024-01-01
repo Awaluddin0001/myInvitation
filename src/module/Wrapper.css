@@ -233,6 +233,12 @@
   justify-content: center;
   align-items: center;
   background-color: #f6e1dc;
+  transform: translateY(300%);
+  transition: transform 3s ease-in;
+}
+
+.navBar.show {
+  transform: translateY(0%);
 }
 
 .navBar-iconic {
@@ -259,9 +265,10 @@
 
 .navbarWoman {
   position: absolute;
-  top: 2%;
+  z-index: 150;
+  bottom: 7%;
   left: 0%;
-  padding: 0.1rem 0.4rem 0.1rem 1rem;
+  padding: 0.6rem 1rem 0.6rem 1.4rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -277,9 +284,10 @@
 }
 .navbarMan {
   position: absolute;
-  top: 2%;
+  z-index: 150;
+  bottom: 7%;
   right: 0%;
-  padding: 0.1rem 0.4rem 0.1rem 1rem;
+  padding: 0.6rem 1.4rem 0.6rem 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -300,4 +308,11 @@
 
 .fontUp {
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 376px) {
+  .framein {
+    height: 73%;
+    top: 7%;
+  }
 }

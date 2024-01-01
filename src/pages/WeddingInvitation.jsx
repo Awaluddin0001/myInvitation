@@ -1,5 +1,6 @@
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { decryptString } from "../module/CryptoName";
 import Wrapper from "../module/Wrapper";
 import OrangMenikah from "./OrangMenikah";
 import Schedule1 from "./Schedule1";
@@ -7,98 +8,71 @@ import TurutMengundang1 from "./TurutMengundang1";
 import Schedule2 from "./Schedule2";
 import TurutMengundang2 from "./TurutMengundang2";
 import Transfer from "./Transfer";
-
-const pages = [
-  OrangMenikah,
-  Schedule1,
-  TurutMengundang1,
-  Schedule2,
-  TurutMengundang2,
-  Transfer,
-];
+import Lokasi1 from "./Lokasi1";
+import Lokasi2 from "./Lokasi2";
+import Comment from "./Comment";
+import "./WeddingInvitation.css";
 
 export default function WeddingInvitation() {
   const { name } = useParams();
   const [onText1, setonText1] = useState(false);
-  const [currentPage, setCurrentPage] = useState(0);
-  const containerRef = useRef(null);
-  const [canChangePage, setCanChangePage] = useState(true);
-
-  const handleScroll = (event) => {
-    const container = containerRef.current;
-    const scrollDirection = getScrollDirection(container, event);
-
-    if (scrollDirection === "down" && canChangePage) {
-      setCurrentPage((prevPage) => Math.min(pages.length - 1, prevPage + 1));
-      setCanChangePage(false);
-    } else if (scrollDirection === "up" && canChangePage) {
-      setCurrentPage((prevPage) => Math.max(0, prevPage - 1));
-      setCanChangePage(false);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setCanChangePage(true);
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-
-    container.addEventListener("wheel", handleScroll);
-    container.addEventListener("touchmove", handleScroll);
-    container.addEventListener("touchend", handleTouchEnd);
-
-    return () => {
-      container.removeEventListener("wheel", handleScroll);
-      container.removeEventListener("touchmove", handleScroll);
-      container.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, [canChangePage]);
-
-  const getScrollDirection = (container, event) => {
-    const delta =
-      event.deltaY ||
-      (event.touches &&
-        (event.touches[0].clientX - (container.lastTouchX || 0) ||
-          event.touches[0].clientY - (container.lastTouchY || 0)));
-
-    container.lastTouchX = (event.touches && event.touches[0].clientX) || 0;
-    container.lastTouchY = (event.touches && event.touches[0].clientY) || 0;
-
-    if (delta > 0) return "down";
-    if (delta < 0) return "up";
-    if (event.touches && Math.abs(delta) > 5) {
-      return delta > 0 ? "right" : "left";
-    }
-
-    return "none";
-  };
-
+  const [sSudut, setsSudut] = useState(false);
+  const [onB, setOnb] = useState(false);
+  const [onW, setOnw] = useState(false);
+  const [onO, setOnO] = useState(false);
+  const [onT, setOnt] = useState(false);
+  const [onG, setOng] = useState(false);
+  const [onK, setOnk] = useState(false);
+  const [onPerempuan, setOnperempuan] = useState(true);
+  const [onPria, setOnpria] = useState(false);
   return (
-    <Wrapper name={name} transText1={setonText1}>
-      <div ref={containerRef} className="scroll-container">
-        {pages.map((Page, index) => {
-          if (index == 0) {
-            return (
-              <div
-                key={index}
-                className={`page ${currentPage === index ? "active" : ""}`}
-                style={{ display: currentPage === index ? "block" : "none" }}
-              >
-                <Page transText={onText1} />
-              </div>
-            );
-          }
-          return (
-            <div
-              key={index}
-              className={`page ${currentPage === index ? "active" : ""}`}
-              style={{ display: currentPage === index ? "block" : "none" }}
-            >
-              <Page />
-            </div>
-          );
-        })}
+    <Wrapper
+      name={decryptString(name)}
+      transText1={setonText1}
+      sSudut={sSudut}
+      setsSudut={setsSudut}
+      onB={onB}
+      setOnb={setOnb}
+      onW={onW}
+      setOnw={setOnw}
+      onT={onT}
+      setOnt={setOnt}
+      onG={onG}
+      setOng={setOng}
+      onK={onK}
+      setOnk={setOnk}
+      setOnperempuan={setOnperempuan}
+      setOnpria={setOnpria}
+      setOnO={setOnO}
+    >
+      <div className="pages">
+        <div className={onB ? "page1 show" : "page1"}>
+          <OrangMenikah transText={onText1} />
+        </div>
+        <div className={onW && onPerempuan && !onO ? "page1 show" : "page1"}>
+          <Schedule1 setOnO={setOnO} />
+        </div>
+        <div className={onW && onPerempuan && onO ? "page1 show" : "page1"}>
+          <TurutMengundang1 />
+        </div>
+        <div className={onW && onPria && !onO ? "page1 show" : "page1"}>
+          <Schedule2 setOnO={setOnO} />
+        </div>
+        <div className={onW && onO && onPria ? "page1 show" : "page1"}>
+          <TurutMengundang2 />
+        </div>
+        <div className={onT && onPerempuan ? "page1 show" : "page1"}>
+          <Lokasi1 />
+        </div>
+        <div className={onT && onPria ? "page1 show" : "page1"}>
+          <Lokasi2 />
+        </div>
+        <div className={onG ? "page1 show" : "page1"}>
+          <Transfer />
+        </div>
+        <div className={onK ? "page2 show" : "page2"}>
+          <Comment />
+        </div>
       </div>
     </Wrapper>
   );
