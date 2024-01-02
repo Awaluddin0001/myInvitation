@@ -54,7 +54,7 @@ export default function Comment() {
           }
         />
         <div className="absenKom">
-          <label htmlFor="absen">Absen:</label>
+          <label htmlFor="absen">Konfirmasi:</label>
           <select
             name="absen"
             value={newComment.absen}

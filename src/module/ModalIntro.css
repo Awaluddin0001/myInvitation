@@ -45,7 +45,7 @@
 }
 
 .nameUndangan {
-  font-family: "Carattere", cursive;
+  font-family: "DM Serif Display", serif;
   color: #95d0f3;
   font-size: 2rem;
   -webkit-text-stroke: 0.015rem rgb(155, 62, 0);
@@ -88,4 +88,29 @@
   bottom: 25%;
   left: 3%;
   width: 40%;
+}
+
+.mydab1 {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: rotate(190deg);
+}
+.mydab2 {
+  position: absolute;
+  top: 25%;
+  right: 0%;
+  transform: rotate(280deg);
+}
+.mydab3 {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  transform: rotate(190deg) scale(-1);
+}
+.mydab4 {
+  position: absolute;
+  bottom: 25%;
+  left: 0%;
+  transform: rotate(280deg) scale(-1);
 }

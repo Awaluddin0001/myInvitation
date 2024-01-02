@@ -18,7 +18,8 @@ import Komentar from "./svg/Komentar";
 import Gift from "./svg/Gift";
 import Tempat from "./svg/Tempat";
 import "./Wrapper.css";
-
+import { capitalizeEveryWord } from "./Capital";
+import Love from "./svg/Love";
 export default function Wrapper({
   children,
   name,
@@ -35,6 +36,8 @@ export default function Wrapper({
   setOng,
   onK,
   setOnk,
+  onL,
+  setOnL,
   setOnperempuan,
   setOnpria,
   setOnO,
@@ -67,6 +70,7 @@ export default function Wrapper({
     setOnt(false);
     setOng(false);
     setOnk(false);
+    setOnL(false);
     handleunSummonF1();
     handleunSummonF2();
     handleunSummonbut();
@@ -84,6 +88,8 @@ export default function Wrapper({
     setOng(false);
     setOnk(false);
     setOnO(false);
+    setOnL(false);
+
     handleSummonF1();
     handleunSummonF2();
     handleSummonbut();
@@ -96,6 +102,8 @@ export default function Wrapper({
     setOng(false);
     setOnk(false);
     setOnO(false);
+    setOnL(false);
+
     handleunSummonF1();
     handleSummonF2();
     handleunSummonbut();
@@ -108,6 +116,8 @@ export default function Wrapper({
     setOng(false);
     setOnk(false);
     setOnO(false);
+    setOnL(false);
+
     handleSummonF1();
     handleunSummonF2();
     handleunSummonbut();
@@ -120,6 +130,8 @@ export default function Wrapper({
     setOng(true);
     setOnk(false);
     setOnO(false);
+    setOnL(false);
+
     handleunSummonF1();
     handleSummonF2();
     handleSummonbut();
@@ -132,6 +144,22 @@ export default function Wrapper({
     setOng(false);
     setOnk(true);
     setOnO(false);
+    setOnL(false);
+
+    handleSummonF1();
+    handleunSummonF2();
+    handleunSummonbut();
+  };
+  const handleOnL = () => {
+    setsSudut(false);
+    setOnb(false);
+    setOnw(false);
+    setOnt(false);
+    setOng(false);
+    setOnk(false);
+    setOnO(false);
+    setOnL(true);
+
     handleSummonF1();
     handleunSummonF2();
     handleunSummonbut();
@@ -171,21 +199,6 @@ export default function Wrapper({
     audioRef.current.volume = 0.3;
     setAudioEnabled(false);
   };
-
-  function capitalizeEveryWord(inputString) {
-    // Split the string into an array of words
-    const words = inputString.split(" ");
-
-    // Capitalize the first letter of each word
-    const capitalizedWords = words.map((word) => {
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    });
-
-    // Join the capitalized words back into a string
-    const resultString = capitalizedWords.join(" ");
-
-    return resultString;
-  }
 
   return (
     <div className="bgWrapper">
@@ -276,6 +289,10 @@ export default function Wrapper({
             <Komentar className="icSize" act={onK} />
             <h3 style={{ color: `${onK ? "#f27880" : "#000"}` }}>Pesan</h3>
           </div>
+          <div className="navBar-iconic" onClick={handleOnL}>
+            <Love className="icSize" act={onL} />
+            <h3 style={{ color: `${onK ? "#f27880" : "#000"}` }}>Love</h3>
+          </div>
           <div className="navBar-iconic" onClick={handleTutup}>
             <img src={Tutup} alt="tutup undangan" className="icSize" />
             <h3>Tutup</h3>
@@ -315,6 +332,8 @@ Wrapper.propTypes = {
   setOng: PropTypes.func,
   onK: PropTypes.bool,
   setOnk: PropTypes.func,
+  onL: PropTypes.bool,
+  setOnL: PropTypes.func,
   setOnperempuan: PropTypes.func,
   setOnpria: PropTypes.func,
   setOnO: PropTypes.func,

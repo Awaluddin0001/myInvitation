@@ -19,7 +19,7 @@ export default function Lokasi1() {
         zoom={13}
         scrollWheelZoom={false}
         style={{
-          height: "25rem",
+          height: "30rem",
           width: "80%",
           marginTop: "2rem",
           border: "solid 2px #000",

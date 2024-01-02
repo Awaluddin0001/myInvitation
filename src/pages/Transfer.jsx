@@ -2,6 +2,9 @@ import { useState } from "react";
 import bca from "./../assets/bca.png";
 import bri from "./../assets/bri.png";
 import copy from "./../assets/copy.svg";
+import cardBca from "./../assets/cardBca.png";
+import cardBri from "./../assets/cardBri.png";
+import "./Transfer.css";
 
 export default function Transfer() {
   const [bankAktif, setBankAktif] = useState(true);
@@ -33,8 +36,54 @@ export default function Transfer() {
         jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado
         secara cashless
       </h2>
-      <div className="cardBank">
-        <div className="cardBankHead">
+      {/* <div className="cardBank"> */}
+      <div className={!bankAktif ? "flipCard buka" : "flipCard"}>
+        <div className="flipCard-inner">
+          <div className="flipCard-front">
+            <img src={cardBri} alt="kartu bank" className="cardDebit" />
+            <div
+              className="copyText"
+              onClick={() => handleCopyText(textToCopy2)}
+            >
+              <h3>Copy rekening</h3>
+              <img src={copy} alt="copy text" />
+              <div className={`notificationC ${copiedMessage && "show"}`}>
+                {copiedMessage}
+              </div>
+            </div>
+          </div>
+          <div className="flipCard-back">
+            <img src={cardBca} alt="kartu bank" className="cardDebit" />
+            <div
+              className="copyText"
+              onClick={() => handleCopyText(textToCopy1)}
+            >
+              <h3>Copy rekening</h3>
+              <img src={copy} alt="copy text" />
+              <div className={`notificationC ${copiedMessage && "show"}`}>
+                {copiedMessage}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="btnSkew">
+          <div className="skewLeft" onClick={() => setBankAktif(true)}>
+            <img
+              src={bri}
+              alt="btn bri"
+              className={bankAktif ? "logoCarda aktif" : "logoCarda"}
+            />
+          </div>
+          <div className="skewRight" onClick={() => setBankAktif(false)}>
+            <img
+              src={bca}
+              alt="btn bca"
+              className={!bankAktif ? "logoCardb aktif" : "logoCardb"}
+            />
+          </div>
+        </div>
+        {/* <div className="cardBankHead">
           <img
             src={bri}
             alt="bri"
@@ -80,7 +129,7 @@ export default function Transfer() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

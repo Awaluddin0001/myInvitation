@@ -2,6 +2,7 @@ import FlowerTop3 from "./svg/FlowerTop3";
 import undanganBuka from "./../assets/bukaUndanagn.svg";
 import PropTypes from "prop-types";
 import but3 from "./../assets/butterfly3.gif";
+import dab2 from "./../assets/daunback2.svg";
 import "./ModalIntro.css";
 export default function ModalIntro({
   name,
@@ -29,6 +30,10 @@ export default function ModalIntro({
   return (
     <div className={openUndangan ? "transitionUn close" : "transitionUn"}>
       <div className="modalWrap">
+        <img src={dab2} alt="flower daun alabopa" className="mydab1" />
+        <img src={dab2} alt="flower daun alabopa" className="mydab2" />
+        <img src={dab2} alt="flower daun alabopa" className="mydab3" />
+        <img src={dab2} alt="flower daun alabopa" className="mydab4" />
         <FlowerTop3 className="flowerBottom3" />
         <div className="textModal">
           <h3>Kepada Bapak/Ibu/Saudara/i</h3>

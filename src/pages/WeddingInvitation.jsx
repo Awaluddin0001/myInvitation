@@ -11,6 +11,7 @@ import Transfer from "./Transfer";
 import Lokasi1 from "./Lokasi1";
 import Lokasi2 from "./Lokasi2";
 import Comment from "./Comment";
+import LoveUs from "./LoveUs";
 import "./WeddingInvitation.css";
 
 export default function WeddingInvitation() {
@@ -23,6 +24,7 @@ export default function WeddingInvitation() {
   const [onT, setOnt] = useState(false);
   const [onG, setOng] = useState(false);
   const [onK, setOnk] = useState(false);
+  const [onL, setOnL] = useState(false);
   const [onPerempuan, setOnperempuan] = useState(true);
   const [onPria, setOnpria] = useState(false);
   return (
@@ -41,6 +43,8 @@ export default function WeddingInvitation() {
       setOng={setOng}
       onK={onK}
       setOnk={setOnk}
+      onL={onL}
+      setOnL={setOnL}
       setOnperempuan={setOnperempuan}
       setOnpria={setOnpria}
       setOnO={setOnO}
@@ -69,6 +73,9 @@ export default function WeddingInvitation() {
         </div>
         <div className={onG ? "page1 show" : "page1"}>
           <Transfer />
+        </div>
+        <div className={onL ? "page1 show" : "page1"}>
+          <LoveUs />
         </div>
         <div className={onK ? "page2 show" : "page2"}>
           <Comment />

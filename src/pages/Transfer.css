@@ -1,0 +1,76 @@
+.flipCard {
+  margin-top: 2rem;
+  width: 30rem;
+  height: 17rem;
+  perspective: 1000px;
+}
+
+.flipCard-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Maintain the 3D effect */
+  transition: transform 0.5s; /* Add a smooth transition effect */
+}
+
+.flipCard.buka .flipCard-inner {
+  transform: rotateY(180deg);
+}
+
+.flipCard-front,
+.flipCard-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* Hide the backface when not flipped */
+  background-color: #161616;
+  border-radius: 15px;
+}
+
+.flipCard-back {
+  transform: rotateY(180deg);
+}
+
+.cardDebit {
+  width: 100%;
+  height: 100%;
+}
+
+.btnSkew {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1.5rem;
+}
+
+.skewLeft {
+  cursor: pointer;
+  background-color: #161616;
+  padding: 1rem;
+  transform: skew(20deg);
+  border-radius: 10px;
+}
+.skewRight {
+  cursor: pointer;
+  background-color: #161616;
+  padding: 1rem;
+  transform: skew(-20deg);
+  border-radius: 10px;
+}
+
+.logoCarda {
+  width: 40%;
+  transform: skew(-20deg);
+  filter: grayscale(1);
+}
+.logoCardb {
+  width: 40%;
+  transform: skew(20deg);
+  filter: grayscale(1);
+}
+.logoCarda.aktif {
+  filter: grayscale(0);
+}
+.logoCardb.aktif {
+  filter: grayscale(0);
+}
