@@ -134,7 +134,9 @@
 .cardBank {
   padding: 1.2rem;
   border-radius: 10px;
-  background-image: url("./assets/bgWeddingAlabopa2.png");
+  /* background-image: url("./assets/bgWeddingAlabopa2.png");
+   */
+  background-color: #f6e1dc;
   -webkit-box-shadow: 0px 0px 15px 5px #00000060;
   box-shadow: 0px 0px 15px 5px #00000060;
 }
@@ -285,7 +287,7 @@
 
 @media only screen and (max-width: 431px) {
   .logo {
-    height: 16rem;
+    height: 19rem;
   }
 
   .fs2p4r {

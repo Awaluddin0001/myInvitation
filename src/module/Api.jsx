@@ -22,3 +22,22 @@ export const addComment = async (data) => {
     throw error;
   }
 };
+export const getArdiAllComments = async () => {
+  try {
+    const response = await axios.get(`${baseURL}/ardiAllComment`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    throw error;
+  }
+};
+
+export const addArdiComment = async (data) => {
+  try {
+    const response = await axios.post(`${baseURL}/ardicomment`, data);
+    return response.data;
+  } catch (error) {
+    console.error("Error adding comment:", error);
+    throw error;
+  }
+};

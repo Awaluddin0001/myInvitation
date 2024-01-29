@@ -8,7 +8,6 @@ import FlowerTop1 from "./svg/FlowerTop1";
 import FlowerTop2 from "./svg/FlowerTop2";
 import ModalIntro from "./ModalIntro";
 import butterGif from "./../assets/butterfly.gif";
-import Frames from "./svg/Frames";
 import Tutup from "./../assets/tutup.svg";
 import Man from "./svg/Man";
 import Woman from "./svg/Woman";
@@ -38,11 +37,12 @@ export default function Wrapper({
   setOnk,
   onL,
   setOnL,
+  onPerempuan,
   setOnperempuan,
+  onPria,
   setOnpria,
   setOnO,
 }) {
-  const [onFrames, setonFrames] = useState(false);
   const [onNav, setonNav] = useState(false);
 
   const [butSummon, setbutSummon] = useState(false);
@@ -150,6 +150,7 @@ export default function Wrapper({
     handleunSummonF2();
     handleunSummonbut();
   };
+
   const handleOnL = () => {
     setsSudut(false);
     setOnb(false);
@@ -160,9 +161,9 @@ export default function Wrapper({
     setOnO(false);
     setOnL(true);
 
-    handleSummonF1();
-    handleunSummonF2();
-    handleunSummonbut();
+    handleunSummonF1();
+    handleSummonF2();
+    handleSummonbut();
   };
 
   const handleSummonF1 = () => {
@@ -242,7 +243,6 @@ export default function Wrapper({
             <h5 className="musicName stop">¨Pause Music¨</h5>
           </div>
         )}
-        <Frames className={"framein"} atan={onFrames} />
 
         <img
           src={butterGif}
@@ -254,20 +254,22 @@ export default function Wrapper({
           alt="alabopa butterfly"
           className={butSummon ? "butterGif2 summon" : "butterGif2"}
         />
-        <div
-          className={sSudut ? "navbarWoman show" : "navbarWoman"}
-          onClick={handlePerempuan}
-        >
-          <Woman className="icSudut" />
-          <h3 className="fontUp">Wanita</h3>
+        <div className={sSudut ? "navbarTop show" : "navbarTop"}>
+          <div className={"navbarTitle"}>
+            <h3 className="fontUp">Pilih acara</h3>
+          </div>
+          <div className="navbarTop-sec">
+            <div className={"navbarWoman"} onClick={handlePerempuan}>
+              <Woman className={onPerempuan ? "icSudut1 on" : "icSudut1"} />
+              <h3 className="fontUp">Wanita</h3>
+            </div>
+            <div className={"navbarMan"} onClick={handlePria}>
+              <h3 className="fontUp">Pria</h3>
+              <Man className={onPria ? "icSudut2 on" : "icSudut2"} />
+            </div>
+          </div>
         </div>
-        <div
-          className={sSudut ? "navbarMan show" : "navbarMan"}
-          onClick={handlePria}
-        >
-          <h3 className="fontUp">Pria</h3>
-          <Man className="icSudut" />
-        </div>
+
         <div className={onNav ? "navBar show" : "navBar"}>
           <div className="navBar-iconic" onClick={handleOnB}>
             <Beranda className="icSize" act={onB} />
@@ -291,7 +293,7 @@ export default function Wrapper({
           </div>
           <div className="navBar-iconic" onClick={handleOnL}>
             <Love className="icSize" act={onL} />
-            <h3 style={{ color: `${onK ? "#f27880" : "#000"}` }}>Love</h3>
+            <h3 style={{ color: `${onL ? "#f27880" : "#000"}` }}>Love</h3>
           </div>
           <div className="navBar-iconic" onClick={handleTutup}>
             <img src={Tutup} alt="tutup undangan" className="icSize" />
@@ -308,7 +310,6 @@ export default function Wrapper({
         summonBut={handleSummonbut}
         handleSummonF1={handleSummonF1}
         transText1={transText1}
-        transFrames={setonFrames}
         setOnb={setOnb}
         setonNav={setonNav}
       />
@@ -334,7 +335,9 @@ Wrapper.propTypes = {
   setOnk: PropTypes.func,
   onL: PropTypes.bool,
   setOnL: PropTypes.func,
+  onPerempuan: PropTypes.bool,
   setOnperempuan: PropTypes.func,
+  onPria: PropTypes.bool,
   setOnpria: PropTypes.func,
   setOnO: PropTypes.func,
 };

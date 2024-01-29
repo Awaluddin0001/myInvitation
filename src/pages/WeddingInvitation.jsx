@@ -45,7 +45,9 @@ export default function WeddingInvitation() {
       setOnk={setOnk}
       onL={onL}
       setOnL={setOnL}
+      onPerempuan={onPerempuan}
       setOnperempuan={setOnperempuan}
+      onPria={onPria}
       setOnpria={setOnpria}
       setOnO={setOnO}
     >

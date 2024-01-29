@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { getAllComments, addComment } from "../module/Api";
 import single from "./../assets/singlecheck.svg";
 import double from "./../assets/doubleCheck.svg";
+import { toast } from "react-toastify"; // Import toast from react-toastify
+import "react-toastify/dist/ReactToastify.css";
 import "./Comment.css";
 export default function Comment() {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({
     nama: "",
     komentar: "",
-    absen: "",
+    absen: "hadir",
   });
 
   useEffect(() => {
@@ -25,9 +27,16 @@ export default function Comment() {
       const updatedComments = await getAllComments();
       setComments(updatedComments);
       // Clear the newComment state
-      setNewComment({ nama: "", komentar: "", absen: "" });
+      setNewComment({ nama: "", komentar: "", absen: "hadir" });
+      // Show success notification
+      toast.success("Makasih, pesan anda sudah ditambahkan", {
+        autoClose: 3000,
+      });
     } catch (error) {
-      console.error("Error adding comment:", error);
+      // Show error notification
+      toast.error("Failed to add comment. Please try again.", {
+        autoClose: 3000,
+      });
     }
   };
 

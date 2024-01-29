@@ -10,7 +10,6 @@ export default function ModalIntro({
   summonBut,
   handleSummonF1,
   transText1,
-  transFrames,
   openUndangan,
   setOpenUndangan,
   setOnb,
@@ -22,7 +21,6 @@ export default function ModalIntro({
     summonBut();
     handleSummonF1();
     transText1(true);
-    transFrames(true);
     setOnb(true);
     setonNav(true);
   };
@@ -60,7 +58,6 @@ ModalIntro.propTypes = {
   summonBut: PropTypes.func,
   handleSummonF1: PropTypes.func,
   transText1: PropTypes.func,
-  transFrames: PropTypes.func,
   openUndangan: PropTypes.bool,
   setOpenUndangan: PropTypes.func,
   setOnb: PropTypes.func,
