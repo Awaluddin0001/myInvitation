@@ -8,7 +8,9 @@ import WeddingInvitation from "./pages/WeddingInvitation.jsx";
 import EncryptName from "./pages/EncryptName.jsx";
 import VideoKami from "./pages/VideoKami.jsx";
 import ArdiWedding from "./pages/ardi/ArdiWedding.jsx";
+import InvitationYudha from "./pages/yudha/InvitationYudha.jsx";
 import "./index.css";
+import InvitationNana from "./pages/nana/InvitationNana.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,24 @@ const router = createBrowserRouter([
     element: (
       <>
         <ArdiWedding />
+        <ToastContainer position="top-center" autoClose={3000} style={{}} />
+      </>
+    ),
+  },
+  {
+    path: "/ourweddingyudha/:name",
+    element: (
+      <>
+        <InvitationYudha />
+        <ToastContainer position="top-center" autoClose={3000} style={{}} />
+      </>
+    ),
+  },
+  {
+    path: "/ourweddingnana/:name",
+    element: (
+      <>
+        <InvitationNana />
         <ToastContainer position="top-center" autoClose={3000} style={{}} />
       </>
     ),

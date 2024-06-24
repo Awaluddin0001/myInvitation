@@ -1,0 +1,302 @@
+.introSection {
+  height: 100vh;
+  width: 100%;
+}
+.mempelaiSection {
+  height: 100%;
+  width: 100%;
+}
+
+.intoImage {
+  background-image: url("./../../assets/yud5.jpeg");
+  background-size: cover;
+  background-position: top center;
+  height: 100%;
+}
+.mempelaiImage {
+  background-color: transparent;
+  background-image: url("./../../assets/yudhaTree.png");
+  background-size: cover;
+  background-position: top center;
+  height: 100%;
+}
+
+.introOverlay {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #00000000 33%, #1a0f00 100%);
+  opacity: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  color: #fff;
+}
+.introOverlayW {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #ffffffc5 33%, #fffefc 100%);
+  opacity: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: #54595f;
+}
+
+.titleReguler {
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  font-size: 1.5rem;
+}
+
+.nameTtile {
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  font-size: 3.6rem;
+  font-family: "DM Serif Display", serif;
+}
+
+.initialName {
+  font-size: 3.8rem;
+  font-family: "Playwrite PL", serif;
+  margin-top: 100px;
+  margin-bottom: 6px;
+}
+
+.mempelaiDesc {
+  font-size: 1.4rem;
+  text-align: justify;
+  width: 80%;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+.imageTagName {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.imageWrapperNana {
+  width: 100%;
+  height: 372px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: transparent;
+  background-image: url("./../../assets/yud8.jpeg");
+  background-size: 180%;
+  background-position: center;
+}
+
+.imageWrapperYudha {
+  width: 100%;
+  height: 372px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: transparent;
+  background-image: url("./../../assets/yud2.jpeg");
+  background-size: 180%;
+  background-position: -35px 415px;
+  transform: scale(-1, 1);
+}
+
+.tagName {
+  width: 80%;
+  padding: 25px;
+  background-color: #fbfbfb87;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.877),
+      rgba(255, 255, 255, 0.877)
+    ),
+    url("./../../assets/yudhaTree.png");
+  background-size: cover;
+  background-position: top;
+  border-radius: 20px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  transform: translateY(-35px);
+}
+
+.theNameNana {
+  font-family: "DM Serif Display", serif;
+  color: #54595f;
+  font-size: 2.6rem;
+  text-align: right;
+  font-weight: 600;
+}
+.theNameYudha {
+  font-family: "DM Serif Display", serif;
+  color: #54595f;
+  font-size: 2.6rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.theNameNanaParents {
+  font-family: "DM Serif Display", serif;
+  color: #54595f;
+  font-size: 1.4rem;
+  text-align: right;
+}
+.theNameYudhaParents {
+  font-family: "DM Serif Display", serif;
+  color: #54595f;
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.igIcon {
+  font-size: 2rem;
+}
+
+.tagIntro {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 50px;
+  margin-bottom: 6px;
+}
+
+.initialNameEvent {
+  font-size: 3.2rem;
+  font-family: "Playwrite PL", serif;
+  text-align: left;
+}
+
+.hr {
+  width: 100%;
+  height: 0.1px;
+  border: 1px solid #000;
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  background-color: #55595f;
+}
+
+.eventName {
+  color: #fff;
+  rotate: 90deg;
+  font-size: 2.6rem;
+}
+
+.eventDate {
+  background-color: #fffdfd;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.eventDate h3 {
+  font-size: 5rem;
+}
+
+.eventDate h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.eventDate h4:first-child {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.eventDate p {
+  font-size: 1.3rem;
+}
+
+.btnMaps:active,
+.btnMaps:link,
+.btnMaps:visited,
+.btnMaps a {
+  padding: 6px 12px;
+  border-radius: 50px;
+  background-color: #55595f;
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.galleryImages {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.gallery1,
+.gallery2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gallery1 img,
+.gallery2 img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.fotoAnimationYudha {
+  animation: rotateAndGrayscaleYudha 3s linear infinite;
+}
+
+@keyframes rotateAndGrayscaleYudha {
+  0% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(5deg);
+    filter: grayscale(100%);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(15deg);
+    filter: grayscale(0%);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(5deg);
+    filter: grayscale(100%);
+  }
+}
+
+.fotoAnimationNana {
+  animation: rotateAndGrayscaleNana 3s linear infinite;
+}
+
+@keyframes rotateAndGrayscaleNana {
+  0% {
+    transform: translate(-50%, -50%) rotate(-15deg);
+    filter: grayscale(100%);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+    filter: grayscale(0%);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-15deg);
+    filter: grayscale(100%);
+  }
+}
