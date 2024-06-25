@@ -1,11 +1,24 @@
 import styles from "./../../css/module/Yudha.module.css";
 import { FaInstagramSquare } from "react-icons/fa";
+import useIntersectionObserver from "../../module/IntersectionObserver";
 export default function MempelaiInvitationNana() {
+  const [sectionRef, isVisible] = useIntersectionObserver();
+  const [cardRef1, isCard1] = useIntersectionObserver();
+  const [cardRef2, isCard2] = useIntersectionObserver();
   return (
     <section className={styles.mempelaiSection}>
       <div className={styles.mempelaiImage}>
-        <div className={styles.introOverlayW}>
-          <h2 className={styles.initialName}>N | Y</h2>
+        <div
+          className={styles.introOverlayW}
+          style={{
+            transition: "all 1s linear",
+            opacity: isVisible ? "1" : "0",
+            visibility: isVisible ? "visible" : "hidden",
+          }}
+        >
+          <h2 className={styles.initialName} ref={sectionRef}>
+            N | Y
+          </h2>
           <p className={styles.mempelaiDesc} style={{ textAlign: "center" }}>
             QS Ar-rum 21
           </p>
@@ -17,8 +30,16 @@ export default function MempelaiInvitationNana() {
             terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir”
           </p>
           <div className={styles.imageTagName}>
-            <div className={styles.imageWrapperNana}></div>
-            <div className={styles.tagName}>
+            <div className={styles.imageWrapperNana} ref={cardRef1}></div>
+            <div
+              className={styles.tagName}
+              style={{
+                transition: "all 1s linear",
+                opacity: isCard1 ? "1" : "0",
+                visibility: isCard1 ? "visible" : "hidden",
+                transform: isCard1 ? "translateY(-40px)" : "translateY(0)",
+              }}
+            >
               <p className={styles.theNameNana}>
                 Marcha Adhana Kadang, S.Ak Dg. Bunga
               </p>
@@ -48,8 +69,16 @@ export default function MempelaiInvitationNana() {
             &
           </h2>
           <div className={styles.imageTagName}>
-            <div className={styles.imageWrapperYudha}></div>
-            <div className={styles.tagName}>
+            <div className={styles.imageWrapperYudha} ref={cardRef2}></div>
+            <div
+              className={styles.tagName}
+              style={{
+                transition: "all 1s linear",
+                opacity: isCard2 ? "1" : "0",
+                visibility: isCard2 ? "visible" : "hidden",
+                transform: isCard2 ? "translateY(-40px)" : "translateY(0)",
+              }}
+            >
               <p className={styles.theNameYudha}>
                 Yudha Ramdhani, S.E Dg. Rapi
               </p>

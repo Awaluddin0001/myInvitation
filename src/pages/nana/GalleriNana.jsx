@@ -7,11 +7,22 @@ import yud5 from "./../../assets/yud5.jpeg";
 import yud6 from "./../../assets/yud6.jpeg";
 import yud7 from "./../../assets/yud7.jpeg";
 import yud8 from "./../../assets/yud8.jpeg";
+import useIntersectionObserver from "../../module/IntersectionObserver";
 export default function GalleriNana() {
+  const [sectionRef, isVisible] = useIntersectionObserver();
   return (
-    <section className={styles.mempelaiSection}>
+    <section className={styles.mempelaiSection} ref={sectionRef}>
       <div className={styles.mempelaiImage}>
-        <div className={styles.introOverlayW} style={{ gap: "0px" }}>
+        <div
+          className={styles.introOverlayW}
+          style={{
+            transition: "all 1s linear",
+            opacity: isVisible ? "1" : "0",
+            visibility: isVisible ? "visible" : "hidden",
+            transform: isVisible ? "translateY(0px)" : "translateY(100%)",
+            gap: "0px",
+          }}
+        >
           <div className={styles.tagIntro}>
             <div className={styles.hr}></div>
             <h2 className={styles.initialNameEvent}>Gallery</h2>

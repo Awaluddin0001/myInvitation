@@ -3,7 +3,9 @@ import copy from "./../../assets/copy.svg";
 import bankBtn from "./../../assets/cardYudhaBri.png";
 import { useState } from "react";
 import "./../ardi/AmplopArdi.css";
+import useIntersectionObserver from "../../module/IntersectionObserver";
 export default function WeddingGiftNana() {
+  const [sectionRef, isVisible] = useIntersectionObserver();
   const [copiedMessage, setCopiedMessage] = useState("");
   const rek1 = "022501055990509";
 
@@ -23,9 +25,18 @@ export default function WeddingGiftNana() {
     }, 1000);
   };
   return (
-    <section className={styles.mempelaiSection}>
+    <section className={styles.mempelaiSection} ref={sectionRef}>
       <div className={styles.mempelaiImage}>
-        <div className={styles.introOverlayW} style={{ gap: "0px" }}>
+        <div
+          className={styles.introOverlayW}
+          style={{
+            transition: "all 1s linear",
+            gap: "0px",
+            opacity: isVisible ? "1" : "0",
+            visibility: isVisible ? "visible" : "hidden",
+            transform: isVisible ? "translateY(0px)" : "translateY(100%)",
+          }}
+        >
           <div className={styles.tagIntro}>
             <h2 className={styles.initialNameEvent}>Wedding Gift</h2>
           </div>

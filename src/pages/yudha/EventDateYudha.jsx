@@ -1,11 +1,23 @@
 import styles from "./../../css/module/Yudha.module.css";
 import CarYudha from "./CarYudha";
 import { MdAccessTimeFilled } from "react-icons/md";
+import useIntersectionObserver from "../../module/IntersectionObserver";
+
 export default function EventDateYudha() {
+  const [sectionRef, isVisible] = useIntersectionObserver();
   return (
-    <section className={styles.mempelaiSection}>
+    <section className={styles.mempelaiSection} ref={sectionRef}>
       <div className={styles.mempelaiImage}>
-        <div className={styles.introOverlayW} style={{ gap: "0px" }}>
+        <div
+          className={styles.introOverlayW}
+          style={{
+            transition: "all 1s linear",
+            opacity: isVisible ? "1" : "0",
+            visibility: isVisible ? "visible" : "hidden",
+            transform: isVisible ? "translateY(0px)" : "translateY(100%)",
+            gap: "0px",
+          }}
+        >
           <div className={styles.tagIntro}>
             <h2 className={styles.initialNameEvent}>Wedding Event</h2>
             <div className={styles.hr}></div>

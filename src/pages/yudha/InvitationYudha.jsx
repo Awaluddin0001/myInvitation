@@ -5,7 +5,7 @@ import IntroSection from "./IntroSection";
 import MempelaiInvitation from "./MempelaiInvitation";
 import UcapanYudha from "./UcapanYudha";
 import WeddingGift from "./WeddingGift";
-import yudasong from "./../../assets/yudasong.mp3";
+import yudasong from "./../../assets/yuShania.mp3";
 import playArdi from "./../../assets/ardiPlay.png";
 import stopArdi from "./../../assets/ardiStop.png";
 import { useState, useRef } from "react";
@@ -29,7 +29,12 @@ export default function InvitationYudha() {
   };
   return (
     <DefaultContainer>
-      <SealInvitationYudha name={name} />
+      <SealInvitationYudha
+        name={name}
+        isVisible={isVisible}
+        setIsVisible={setIsVisible}
+        playMusic={handlePlayMusic}
+      />
       <audio ref={audioRef} loop className="audio">
         <source src={yudasong} type="audio/mp3" />
         Your browser does not support the audio tag.
